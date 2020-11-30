@@ -1,3 +1,4 @@
+
 const nav = document.getElementById('primaryNav');
 
 const firstSearchInput = document.getElementById('primarySearch');
@@ -44,6 +45,21 @@ profileStatus.onmouseenter = (e) => {
 	}
 	if(window.matchMedia("(min-width:820px)").matches){
 		e.target.style.left = "60px"
+	}
+}
+
+window.onscroll = () => {
+	const image = document.getElementById("avatar4");
+	const text = document.getElementById("userName1")
+	if(window.matchMedia("(min-width:765px)").matches && window.pageYOffset > 250){
+		image.style.display = "block";
+		text.style.display = "block";
+	}
+
+	if(window.matchMedia("(min-width:765px)").matches && window.pageYOffset < 250){
+		
+		image.style.display= "none"
+		text.style.display = "none"
 	}
 }
 
@@ -212,9 +228,12 @@ const createRepoObjects = (repo) => {
 
 
 const fetchData = () => {
+
+	//Add Personal Token from github
+	const token
 	const fetchHeaders = {
 		"Content-Type" : "application/json",
-		"Authorization": "Bearer 07a3fb8ee7c1e1a13665f29d1bcf02d111225673"	
+		"Authorization": `Bearer ${token}`	
 	}
 	const fetchBody = JSON.stringify({
 		query: `
@@ -265,9 +284,11 @@ const fetchData = () => {
 		const avatar1 = document.getElementById("avatar1");
 		const avatar2 = document.getElementById("avatar2");
 		const avatar3 = document.getElementById("avatar3");
+		const avatar4 = document.getElementById("avatar4");
 		avatar1.src = avatarUrl;
 		avatar2.src = avatarUrl;
 		avatar3.src = avatarUrl;
+		avatar4.src = avatarUrl;
 		document.getElementById("name").textContent = name;
 		document.getElementById("userName").textContent = login;
 		document.getElementById("navUserName").textContent = login;
@@ -275,7 +296,8 @@ const fetchData = () => {
 		const { repositories } = data.data.viewer;
 		
 		document.getElementById("totalTotal").textContent = repositories.totalCount;
-		document.getElementById("repoCount").textContent = repositories.totalCount; 
+		document.getElementById("repoCount").textContent = repositories.totalCount;
+		document.getElementById("repoCount2").textContent = repositories.totalCount; 
 
 		const parentContainer = document.getElementById('repositoriesContainer');
 

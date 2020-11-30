@@ -234,7 +234,14 @@ i.fa-bars:hover{
 
 .main{
 	max-width: 1200px;
-	padding: 10px 20px	
+}
+
+.userProfile, .repositoriesSearchContainer{
+	padding: 0 20px
+}
+
+.totalPublicRepositories, .repositoriesContainer{
+	margin: auto 20px;
 }
 
 .profileFigure{
@@ -302,7 +309,6 @@ i.fa-bars:hover{
 	overflow-x: auto;
 	display: flex;
 	flex-wrap: nowrap;
-	border-bottom: 	1px solid #9A9A9A;
 }
 
 .rule{
@@ -480,6 +486,51 @@ span.repoCount{
 .repositoryForks:hover{
 	color: #0366D6;
 }
+
+
+.repositoriesNav-userDetails{
+	display: flex;
+	column-gap: 5px;
+	width: 24vw;
+	max-width: 250px;
+	align-items: center;
+}
+
+.repositoriesNav{
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	z-index: 1;
+    border-bottom: 1px solid #9A9A9A;
+    background: #fff;
+}
+
+.profileLargerPhoto{
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+}
+
+.userName1, .profileLargerPhoto{
+	display: none;
+}
+
+div.repositoriesNav{
+	display: none;
+}
+
+section.repositoriesNav{
+	max-width: 1360px;
+	margin: auto;
+}
+
+@media screen and (min-height: 250px){
+	section.repositoriesNav , div.repositoriesNav{
+		position: sticky;
+		position: -webkit-sticky;
+		top: 0;
+	}
+}
 @media screen and (max-width: 765px){
 
 	.profileFigure{
@@ -518,9 +569,18 @@ span.repoCount{
 		padding: 10px 0;
 	}
 
-	.rule{
-		display: none;	
+	.repositoriesNav-userDetails{
+		display: none;
 	}
+
+	div.repositoriesNav{
+		display: block;
+	}
+
+	section.repositoriesNav{
+		display: none;
+	}
+
 }
 
 @media screen and (max-width: 545px){
@@ -582,7 +642,21 @@ span.repoCount{
 		margin: 0 10px;
 	}
 
-	
+	.repositoriesNav{
+		grid-template-columns: auto 1fr;
+		column-gap: 1%;
+		margin: 20px auto 10px;
+		padding: 0 20px;
+	}
+
+	.userProfile{
+		position: relative;
+		bottom: 50px;
+		
+	}
+	.userProfile img, .userProfile .profileStatus{
+		z-index: 5;
+	}
 }
 
 @media screen and (min-width: 820px){
@@ -604,4 +678,9 @@ span.repoCount{
 	.main{
 		column-gap: 40px;
 	}
+	.repositoriesNav{
+		column-gap: 40px;
+		
+	}
+	
 }
