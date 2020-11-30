@@ -214,7 +214,7 @@ const createRepoObjects = (repo) => {
 const fetchData = () => {
 	const fetchHeaders = {
 		"Content-Type" : "application/json",
-		"Authorization": "Bearer 3f3164eb173c3684d006a9760bb27f7a56b46e52"	
+		"Authorization": "Bearer 07a3fb8ee7c1e1a13665f29d1bcf02d111225673"	
 	}
 	const fetchBody = JSON.stringify({
 		query: `
