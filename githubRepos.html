@@ -4,6 +4,7 @@
 	<title>Your Repositiories</title>
 	<link rel="stylesheet" href="main.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/80dd2875f0.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -40,7 +41,7 @@
 			<i class="fa fa-caret-down"></i>
 		</a>
 		<a href="#" class="hide nav-profileGroup">
-			<div class="profilePhoto"></div>
+			<img id="avatar1" class="profilePhoto" alt="repositoryOwner">
 			<i class="fa fa-caret-down"></i>
 		</a>
 	</div>
@@ -70,18 +71,72 @@
 			<li>Settings</li>
 		</a>
 		<a>
-			<li>name</li>
+			<img class="profilePhoto" id="avatar2" alt="repositoryOwner">
+			<li id="navUserName"></li>
 		</a>
 		<a>
-			<li>Sign Out</li>
+			
+			<li><i class="fa fa-sign-out-alt"></i> Sign Out</li>
 		</a>
 	</ul>
 </nav>
-<div id="userName">
-</div>
+<hr class="rule" />
+<section class="main">
+	
+	<div class="userProfile">
+		<div class="profileFigure">
+			<img id="avatar3" alt="repositoryOwner">
+			<div class="profilePrimaryData">
+					<span id="name" class="name"></span>
+					<span id="userName" class="userName"></span>
+			</div>
+		</div>
+		<div class="profileSecondaryData">
+			<div class="profileStatus" id="profileStatus">
+				<i id="smile" class="far fa-smile"></i>
+				<span id="setStatus" class="setStatus">Set status</span>
+			</div>
+			<span id="bio" class="userTitle"></span>
+		</div>
+		
+	</div>
+	<div class="repositoriesPage-main">
+		<div class="repositoriesTab">
+			<div>
+				<span class="fa fa-book-open"></span>
+				Overview
+			</div>
+			<div class="repositories">
+				<span class="fa fa-book"></span>
+				Repositories
+				<span id="repoCount" class="repoCount"></span>
+			</div>
+			<div>
+				<span id= "fa-stream" class="fa fa-stream"></span>
+				Projects
+			</div>
+			<div>
+				<span class="fa fa-dice-d6"></span>
+				Packages
+			</div>			
+		</div>
+		
+		<div class="repositoriesSearchContainer">
+			<input class="repositoriesSearch" 
+				type="text" name="repositorySearch" placeholder="Find a repository...">
+		</div>
 
-<h1 class="bigText">Hi</h1>
-<script type="text/javascript" src="main.js"></script>
-<script src="https://kit.fontawesome.com/80dd2875f0.js" crossorigin="anonymous"></script>
+		<div class="totalPublicRepositories" id="totalPublicRepositories">
+			<strong id="totalTotal"></strong> results for <strong>public</strong> repositories
+		</div>
+
+		<div id="repositoriesContainer" class="repositoriesContainer">
+			
+		</div>
+	</div>
+</section>
+
+
+<script type="text/javascript" src="main.js" defer=""></script>
 </body>
 </html>

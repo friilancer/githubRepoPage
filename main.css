@@ -2,10 +2,6 @@ body{
 	margin:0;
 }
 
-.bigText{
-	color: red
-}
-
 nav{
 	background:#24292E;
 }
@@ -138,7 +134,6 @@ i.fa-bars:hover{
 	height: 20px;
 	width: 20px;
 	border-radius: 50%;
-	background: white;
 }
 
 .pullRequest{
@@ -178,8 +173,20 @@ i.fa-bars:hover{
 	padding: 0;
 }
 
-.secondaryNav ul li {
+.secondaryNav ul a{
+	display: flex;	
+	column-gap: 5px;
+	align-items: center;
 	border-top: 1px solid #666;
+	width: 	100%
+}
+
+
+.secondaryNav .fa-sign-out-alt{
+	color: inherit;
+}
+
+.secondaryNav ul li {
 	padding: 10px 0;
 	color: #fff;
 	font-weight: bold;
@@ -219,5 +226,382 @@ i.fa-bars:hover{
 	
 	.nav-first{
 		place-self:center;	
+	}
+}
+
+
+/*body*/
+
+.main{
+	max-width: 1200px;
+	padding: 10px 20px	
+}
+
+.profileFigure{
+	display: grid;
+	grid-template-rows: 1fr auto;
+	grid-gap: 15px 0;
+}
+
+.profileFigure img {
+	width: 24vw;
+	height: 24vw;
+	max-width: 250px;
+	max-height: 250px;
+	border-radius: 100%;
+}
+
+.profileSecondaryData{
+	display: grid;	
+}
+
+.profileSecondaryData .profileStatus{
+	display: flex;
+	column-gap: 5px;
+	padding: 8px;
+	background: #fff;
+	border: 1px solid #e1e4e8;
+	color: #555;	
+}
+
+.profileSecondaryData .profileStatus:hover{
+	cursor: pointer;
+	color: #2686F5;
+}
+
+.profilePrimaryData{
+	display: grid;	
+	grid-template-rows: 1fr auto;
+	grid-gap: 5px 0
+}
+
+
+.profilePrimaryData .name{
+	color: #24292E;
+	font-weight: bold;
+	font-size: 	22px;
+}
+
+.profilePrimaryData .userName{
+	color: #6B727A;
+	font-size: 	20px;	
+}
+
+.profileSecondaryData .userTitle{
+	font-size: 18px;
+	color: #24292E;
+}
+
+.repositoriesPage-main{
+	display: grid;
+	grid-template-rows: auto auto 1fr; 
+}
+
+.repositoriesTab{
+	background: #fff;
+	overflow-x: auto;
+	display: flex;
+	flex-wrap: nowrap;
+	border-bottom: 	1px solid #9A9A9A;
+}
+
+.rule{
+	color: red;
+	background: blue;
+	position: relative;	
+	top: 76px;
+	z-index	: -1;
+}
+
+.repositoriesTab div{
+	display: grid;
+	grid-template-columns: auto auto; 
+	padding: 10px;
+	color: #24292E;
+	align-items: center;
+	column-gap: 8px;
+	cursor:pointer;
+	font-size: 14px;
+	border-bottom: 2.5px solid #fff;
+	box-sizing: border-box;
+}
+
+.repositoriesTab div:hover{
+	border-bottom: 2.5px solid #E8EAEC;
+	box-sizing: border-box;
+}
+
+.repositoriesTab div .fa{
+	padding: 0 5px;
+}
+
+.repositoriesTab .fa{
+	color: #24292E;
+}
+
+.repositoriesTab .repositories{
+	grid-template-columns: auto auto auto; 
+	font-weight: bold;
+	border-bottom: 2px solid #F9826C;
+}
+
+.repositoriesTab .repositories:hover{
+	border-bottom: 2px solid #F9826C;
+}
+
+#fa-stream{
+	border: 1px solid #24292E;
+	padding: 2px;
+	font-size: 10px;
+	border-radius: 1px;
+	transform: rotate(90deg);
+}
+
+span.repoCount{
+	background: #E8EAEC;
+	padding: 3px 8px;
+	text-align: center;
+	border-radius: 10px;
+	font-weight: normal;
+	font-size: 13px
+}
+
+.repositoriesSearch{
+	width: 94%;
+	padding: 10px 15px;
+	margin: 20px 10px;
+	border: 1px solid #E8EAEC;
+	border-radius: 5px;
+}
+
+.repositoriesSearch:focus{
+	border: 1px solid #0366D6;
+	outline: none;
+	box-shadow: 0 0 5px 0 #0366D6;
+
+}
+
+.repositoriesContainer{
+	border-top: 1px solid #C1C1C1;
+}
+
+.totalPublicRepositories{
+	padding: 10px 0;
+}
+.repository{
+	color: 	#444;
+	display: grid;
+	grid-template-columns: 	1fr auto;
+	align-items: center;
+	padding: 10px 0;
+	border-bottom: 1px solid #C1C1C1;	
+}
+
+.repository div{
+	margin: 5px 0;
+}
+
+.primaryRepositoryData{
+	display: flex;
+	column-gap: 15px;
+	align-items: center;	
+}
+
+.isPrivate{
+	padding: 1px 6px;
+	border: 1px solid #C1C1C1;
+	font-size: 	12px;
+	font-weight: bold;	
+	border-radius: 10px;
+	position: relative;	
+	top: 2px;
+}
+
+.repositoryName{
+	padding: 2px 0;
+	color: 	#0366D6;
+	font-weight: bold;
+	font-size: 	20px;
+	cursor: pointer;	
+}
+
+.repositoryName:hover{
+	text-decoration: underline;	
+}
+
+.forkedFrom{
+	font-size: 14px;
+}
+
+.repositoryStar{
+	box-sizing: border-box;
+	display: flex;	
+	column-gap: 3px;
+	align-items: center;
+	justify-content: center;		
+	padding: 5px 10px;
+	border: 1px solid #C1C1C1;
+	border-radius: 6px;
+	justify-self:end;
+	cursor: pointer;	
+}
+
+.repositoryStar:hover{
+	background: #f1f1f1;
+}
+
+.repositoryStarText{
+	color: 	#24292E;
+	position: relative;	
+	top: 2px;
+	font-size: 12px;
+}
+
+.secondaryRepositoryData{
+	display: flex;	
+	column-gap: 15px;
+	font-size: 	13px;
+	align-items: center;
+}
+
+.secondaryRepositoryData span{
+	margin: 0 1px;
+}
+
+.secondaryRepositoryData .detailContainer{
+	display: flex;
+	column-gap: 3px;
+}
+
+.repositoryForks{
+	cursor: pointer;
+}
+
+.repositoryForks:hover{
+	color: #0366D6;
+}
+@media screen and (max-width: 765px){
+
+	.profileFigure{
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: center;
+		column-gap: 25px;
+	}
+	.profileFigure img {
+		width: 20vw;
+		height: 20vw;
+	}
+
+	.profileSecondaryData{
+		grid-template-rows: auto auto;
+		grid-gap: 10px;
+	}
+
+	.profileSecondaryData .profileStatus{
+		column-gap: 10px;
+		border-radius: 5px;
+	}
+
+	.repositoriesPage-main{
+		margin-top: 15px;
+	}
+	.repositoriesSearchContainer{
+		display: grid;
+	}
+	.repositoriesSearch{
+		width: 96%;
+		margin: 20px 0;
+	}
+
+	.totalPublicRepositories{
+		padding: 10px 0;
+	}
+
+	.rule{
+		display: none;	
+	}
+}
+
+@media screen and (max-width: 545px){
+	.repositoriesTab div .fa{
+		display: none
+	}
+}
+
+@media screen and (max-width: 460px){
+	.secondaryRepositoryData{
+		display: block;
+		column-gap: 5px;
+		font-size: 	12px;
+	}
+	.secondaryRepositoryData .detailContainer{
+		display: inline-block;
+	}
+	.repositoryStar{
+		column-gap: 2px;	
+		padding: 3px 6px;
+		border: 1px solid #C1C1C1;
+		border-radius: 3px;	
+	}
+	.repositoryName{
+		font-weight: bold;
+		font-size: 	16px;	
+	}
+	.secondaryRepositoryData .detailContainer span{
+		padding: 0 2px;
+	}
+}
+
+@media screen and (min-width: 765px){
+	.profileSecondaryData .profileStatus{
+		justify-self:end;	
+		place-items:center;
+		position: relative;
+		bottom: 15.7vw;
+		right: 11px;
+		border-radius: 50%;
+		white-space: nowrap;	
+		overflow-x: visible;		
+	}
+
+	.main{
+		display: grid;
+		grid-template-columns: auto 1fr;
+		column-gap: 1%;
+		margin: 20px auto 10px;
+
+	}
+
+	.setStatus{
+		display: none;
+		background: #fff;
+	}
+
+	.totalPublicRepositories, .repositoriesContainer{
+		margin: 0 10px;
+	}
+
+	
+}
+
+@media screen and (min-width: 820px){
+	.profileSecondaryData .profileStatus{
+		right: 0;
+	}	
+}
+
+@media screen and (min-width: 856px){
+	.profileSecondaryData .profileStatus{
+		bottom: 14.7vw;
+		right: 	0;
+	}
+}
+@media screen and (min-width: 910px){
+	.profileSecondaryData .profileStatus{
+		bottom: 140px;
+	}
+	.main{
+		column-gap: 40px;
 	}
 }
