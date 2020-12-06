@@ -1,3 +1,3 @@
 #Clone of Github Repository's page
 
-## Hosted on [netlify](https://angry-hugle-d0ee11.netlify.app/)
+## Hosted on [netlify](https://friendly-booth-d7402d.netlify.app)

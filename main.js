@@ -51,12 +51,12 @@ profileStatus.onmouseenter = (e) => {
 window.onscroll = () => {
 	const image = document.getElementById("avatar4");
 	const text = document.getElementById("userName1")
-	if(window.matchMedia("(min-width:765px)").matches && window.pageYOffset > 250){
+	if(window.matchMedia("(min-width:765px)").matches && window.pageYOffset > 300){
 		image.style.display = "block";
 		text.style.display = "block";
 	}
 
-	if(window.matchMedia("(min-width:765px)").matches && window.pageYOffset < 250){
+	if(window.matchMedia("(min-width:765px)").matches && window.pageYOffset < 300){
 		
 		image.style.display= "none"
 		text.style.display = "none"
@@ -230,7 +230,7 @@ const createRepoObjects = (repo) => {
 const fetchData = () => {
 
 	//Add Personal Token from github
-	const token
+	const token;
 	const fetchHeaders = {
 		"Content-Type" : "application/json",
 		"Authorization": `Bearer ${token}`	
@@ -292,6 +292,7 @@ const fetchData = () => {
 		document.getElementById("name").textContent = name;
 		document.getElementById("userName").textContent = login;
 		document.getElementById("navUserName").textContent = login;
+		document.getElementById("userName1").textContent = login;
 		document.getElementById("bio").textContent = bio;
 		const { repositories } = data.data.viewer;
 		

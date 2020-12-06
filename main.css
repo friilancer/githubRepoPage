@@ -519,10 +519,7 @@ div.repositoriesNav{
 	display: none;
 }
 
-section.repositoriesNav{
-	max-width: 1360px;
-	margin: auto;
-}
+
 
 @media screen and (min-height: 250px){
 	section.repositoriesNav , div.repositoriesNav{
@@ -654,6 +651,10 @@ section.repositoriesNav{
 		bottom: 50px;
 		
 	}
+	section.repositoriesNav{
+		margin-top: 20px;
+	}
+
 	.userProfile img, .userProfile .profileStatus{
 		z-index: 5;
 	}
@@ -681,6 +682,33 @@ section.repositoriesNav{
 	.repositoriesNav{
 		column-gap: 40px;
 		
+	}
+	
+}
+
+@media screen and (min-width: 1300px){
+	section.repositoriesNav{
+		grid-template-columns: 340px 1fr;
+	}
+	
+}
+
+@media screen and (min-width: 1400px){
+	section.repositoriesNav{
+		grid-template-columns: 3fr 7fr;
+	}
+	
+}
+@media screen and (min-width: 1800px){
+	section.repositoriesNav{
+		grid-template-columns: 1fr 2fr;
+	}
+	
+}
+
+@media screen and (min-width: 2200px){
+	section.repositoriesNav{
+		grid-template-columns: 1fr 1.8fr;
 	}
 	
 }
