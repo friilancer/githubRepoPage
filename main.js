@@ -233,7 +233,7 @@ const createRepoObjects = (repo) => {
 const fetchData = () => {
 
 	//Add Personal Token from github
-	const token = "sccs";
+	const token;
 	const fetchHeaders = {
 		"Content-Type" : "application/json",
 		"Authorization": `Bearer ${token}`	
