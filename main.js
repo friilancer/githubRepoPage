@@ -1,4 +1,3 @@
-
 const nav = document.getElementById('primaryNav');
 
 const firstSearchInput = document.getElementById('primarySearch');
@@ -51,12 +50,12 @@ profileStatus.onmouseenter = (e) => {
 window.onscroll = () => {
 	const image = document.getElementById("avatar4");
 	const text = document.getElementById("userName1")
-	if(window.matchMedia("(min-width:765px)").matches && window.pageYOffset > 300){
+	if(window.matchMedia("(min-width:765px)").matches && window.pageYOffset > 400){
 		image.style.display = "block";
 		text.style.display = "block";
 	}
 
-	if(window.matchMedia("(min-width:765px)").matches && window.pageYOffset < 300){
+	if(window.matchMedia("(min-width:765px)").matches && window.pageYOffset < 400){
 		
 		image.style.display= "none"
 		text.style.display = "none"
@@ -73,6 +72,10 @@ profileStatus.onmouseleave = (e) => {
 		document.getElementById("bio").style.marginTop = "";
 	}	
 }
+
+const year = new Date().getFullYear();
+document.getElementById('copyRight').textContent += `${year} Github, Inc`;
+
 
 const getDate = (updatedAt) => { 
 	let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -230,7 +233,7 @@ const createRepoObjects = (repo) => {
 const fetchData = () => {
 
 	//Add Personal Token from github
-	const token;
+	const token = "sccs";
 	const fetchHeaders = {
 		"Content-Type" : "application/json",
 		"Authorization": `Bearer ${token}`	
