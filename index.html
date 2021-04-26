@@ -150,14 +150,52 @@
 				</div>			
 			</div>			
 		</div>
-		
-		<div class="repositoriesSearchContainer">
-			<input class="repositoriesSearch" 
-				type="text" name="repositorySearch" placeholder="Find a repository...">
-		</div>
 
-		<div class="totalPublicRepositories" id="totalPublicRepositories">
-			<strong id="totalTotal"></strong> results for <strong>public</strong> repositories
+		<div>
+			<button class="repositoriesSearchContainer_button button_new button_new_main">
+				<i class="fa fa-book"></i>
+				New
+			</button>
+		</div>
+		<div class="repositoriesSearchContainer">
+			<input 
+			 class="repositoriesSearch" 
+			 type="text" 
+			 name="repositorySearch" 
+			 placeholder="Find a repository..."
+			>
+			<div class="filtersContainer filtersContainer_secondary">
+				<button class="repositoriesSearchContainer_button"	>
+					Type
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<button class="repositoriesSearchContainer_button">
+					Language
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<button class="repositoriesSearchContainer_button">
+					Sort
+					<i class="fa fa-caret-down"></i>
+				</button>
+			</div>
+			<button class="repositoriesSearchContainer_button button_new button_new_secondary">
+				<i class="fa fa-book"></i>
+				New
+			</button>
+		</div>
+		<div class="filtersContainer filtersContainer_main">
+			<button class="repositoriesSearchContainer_button"	>
+				Type
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<button class="repositoriesSearchContainer_button">
+				Language
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<button class="repositoriesSearchContainer_button">
+				Sort
+				<i class="fa fa-caret-down"></i>
+			</button>
 		</div>
 
 		<div id="repositoriesContainer" class="repositoriesContainer">

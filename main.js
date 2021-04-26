@@ -299,7 +299,6 @@ const fetchData = () => {
 		document.getElementById("bio").textContent = bio;
 		const { repositories } = data.data.viewer;
 		
-		document.getElementById("totalTotal").textContent = repositories.totalCount;
 		document.getElementById("repoCount").textContent = repositories.totalCount;
 		document.getElementById("repoCount2").textContent = repositories.totalCount; 
 
