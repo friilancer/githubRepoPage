@@ -261,7 +261,7 @@ const createRepoObjects = (repo) => {
 const fetchData = () => {
 
 	//Add Personal Token from github
-	const token = "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";
+	const token = "";
 	const fetchHeaders = {
 		"Content-Type" : "application/json",
 		"Authorization": `Bearer ${token}`	
