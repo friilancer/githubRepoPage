@@ -1,11 +1,38 @@
 const nav = document.getElementById('primaryNav');
 
-const firstSearchInput = document.getElementById('primarySearch');
-const secondSearchInput = document.getElementById('secondarySearch');
+const in_focus = (selector) => {
+	let elems = document.querySelectorAll(selector);
+	elems.forEach(elem => elem.classList.toggle('in_focus'))
+}
+
+document.querySelectorAll('.followerCount_container').forEach(
+	elem => elem.onmouseenter = () => in_focus('.followerCount')
+);
+document.querySelectorAll('.followerCount_container').forEach(
+	elem => elem.onmouseleave = () => in_focus('.followerCount')
+);
+
+document.querySelectorAll('.followingsCount_container').forEach(
+	elem => elem.onmouseenter = () => in_focus('.followingsCount')
+);
+document.querySelectorAll('.followingsCount_container').forEach(
+	elem => elem.onmouseleave = () => in_focus('.followingsCount')
+);
+
+document.querySelectorAll('.starredRepos_container').forEach(
+	elem => elem.onmouseenter = () => in_focus('.starredRepos')
+);
+document.querySelectorAll('.starredRepos_container').forEach(
+	elem => elem.onmouseleave = () => in_focus('.starredRepos')
+);
+
 
 document.getElementById('navToggler').onclick = () => {
 	document.getElementById("secondaryNav").classList.toggle("toggleHide");
 }
+
+const firstSearchInput = document.getElementById('primarySearch');
+const secondSearchInput = document.getElementById('secondarySearch');
 
 firstSearchInput.onfocus = () => {
 	const slash = document.getElementById('primarySearchSlash');
@@ -36,14 +63,15 @@ profileStatus.onmouseenter = (e) => {
 	if(window.matchMedia("(min-width:765px)").matches){
 		setStatus.style.display = "block";
 		e.target.style.borderRadius = "20px";
-		document.getElementById("bio").style.position = "fixed";
-		document.getElementById("bio").style.marginTop = "34px";	
 	}
-	if(window.matchMedia("(min-width:765px) and (max-width:820px)").matches){
+	if(window.matchMedia("(min-width:765px) and (max-width:845px)").matches){
+		e.target.style.left = "20px"
+	}
+	if(window.matchMedia("(min-width:845px) and (max-width:910px)").matches){
+		e.target.style.left = "35px"
+	}
+	if(window.matchMedia("(min-width:910px)").matches){
 		e.target.style.left = "50px"
-	}
-	if(window.matchMedia("(min-width:820px)").matches){
-		e.target.style.left = "60px"
 	}
 }
 
@@ -233,7 +261,7 @@ const createRepoObjects = (repo) => {
 const fetchData = () => {
 
 	//Add Personal Token from github
-	const token = "";
+	const token = "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";
 	const fetchHeaders = {
 		"Content-Type" : "application/json",
 		"Authorization": `Bearer ${token}`	
@@ -247,6 +275,18 @@ const fetchData = () => {
 					email
 					avatarUrl
 					bio
+					location
+				    websiteUrl
+				    twitterUsername
+				    followers{
+				      totalCount
+				    }
+				    following{
+				      totalCount
+				    }
+				    starredRepositories{
+				      totalCount
+				    }
 					repositories(first:20){
 						totalCount
 						edges{
@@ -282,7 +322,18 @@ const fetchData = () => {
 	})
 	.then(res => res.json())
 	.then(data =>{
-		const {bio, avatarUrl, login, name} = data.data.viewer; 
+		const {bio, 
+			avatarUrl, 
+			login, 
+			name, 
+			email, 
+			websiteUrl,
+			twitterUsername,
+			followers,
+			following,
+			location,
+			starredRepositories
+		} = data.data.viewer; 
 		
 		const avatar1 = document.getElementById("avatar1");
 		const avatar2 = document.getElementById("avatar2");
@@ -298,16 +349,29 @@ const fetchData = () => {
 		document.getElementById("userName1").textContent = login;
 		document.getElementById("bio").textContent = bio;
 		const { repositories } = data.data.viewer;
-		
+
 		document.getElementById("repoCount").textContent = repositories.totalCount;
 		document.getElementById("repoCount2").textContent = repositories.totalCount; 
+		document.getElementById("followerCount").textContent = followers.totalCount;
+		document.getElementById("followingsCount").textContent = following.totalCount;
+		document.getElementById("starredRepos").textContent = starredRepositories.totalCount ;
+		document.getElementById("followerCount2").textContent = followers.totalCount;
+		document.getElementById("followingsCount2").textContent = following.totalCount;
+		document.getElementById("starredRepos2").textContent = starredRepositories.totalCount ;
+		document.getElementById("location").textContent = location ;
+		document.getElementById("userProfile_email").textContent = email;
+		document.getElementById("website").textContent = websiteUrl;
+		document.getElementById("websiteUrl").setAttribute("href", `https://${websiteUrl}`);
+		document.getElementById("emailUrl").setAttribute("href", `mailto:${email}`);
+		document.getElementById("twitterUrl").setAttribute("href", `https://twitter.com/${twitterUsername}`);
+		document.getElementById("twitter").textContent = twitterUsername;
 
 		const parentContainer = document.getElementById('repositoriesContainer');
 
 		for(let i = repositories.edges.length; i > 0; i--){
 
 			let newObj = createRepoObjects(repositories.edges[i-1].node);
-			parentContainer	.append(newObj);	
+			parentContainer.append(newObj);	
 		}
 	})
 }

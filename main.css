@@ -107,10 +107,9 @@ i.fa-bars:hover{
 
 
 .nav-bellGroup .fa-bell{
-	font-size: 20px;
-	position: relative;
-	bottom: 5px;
+	font-size: 18px;
 }
+
 .nav-profileGroup, .nav-plusGroup{
 	display: flex;
 	align-items: center;
@@ -134,6 +133,7 @@ i.fa-bars:hover{
 	height: 20px;
 	width: 20px;
 	border-radius: 50%;
+	border: 0.1px solid #C9CACB;
 }
 
 .pullRequest{
@@ -144,22 +144,6 @@ i.fa-bars:hover{
 	margin-left: 5px
 }
 
-.nav-bellGroup{
-	display: grid;
-	grid-template-rows: auto auto;
-}
-
-.nav-bellGroup .blue-circle{
-	height:11px;
-	width:11px;
-	border-radius: 50%;
-	background: #2686F5;
-	justify-self:end;
-	z-index: 1;
-	position: relative;
-	left: 1px;
-	top:2px;
-}
 .secondaryNav {
 	padding: 20px 20px 6px;
 }
@@ -262,16 +246,26 @@ i.fa-bars:hover{
 	display: grid;	
 }
 
-.profileSecondaryData .profileStatus{
+.profileStatus_container{
+	display: grid;
+}
+
+@media screen and (min-width: 765px){
+	.profileStatus_container{
+		height: 20px;
+	}
+}
+.profileStatus{
 	display: flex;
 	column-gap: 5px;
 	padding: 8px;
 	background: #fff;
 	border: 1px solid #e1e4e8;
-	color: #555;	
+	color: #555;
+	border-radius: 5px;	
 }
 
-.profileSecondaryData .profileStatus:hover{
+.profileStatus:hover{
 	cursor: pointer;
 	color: #2686F5;
 }
@@ -295,7 +289,6 @@ i.fa-bars:hover{
 }
 
 .profileSecondaryData .userTitle{
-	font-size: 18px;
 	color: #24292E;
 }
 
@@ -372,6 +365,7 @@ span.repoCount{
 	font-size: 13px
 }
 
+
 .repositoriesSearchContainer{
 	display: grid;
 	grid-template-columns: 1fr auto auto;
@@ -382,18 +376,89 @@ span.repoCount{
 }
 
 .repositoriesSearchContainer_button{
-	padding: 10px 15px;
-	background: #fff;
+	padding: 10px 17px;
+	background: #FAFBFC;
 	border: 1.5px solid #E8EAEC;
-	border-radius: 	5px;
+	border-radius: 	10px;
 	color:  #24292E;
-	font-weight: bold;	
+	font-weight: bold;
+	cursor: pointer;
+	transition: background 0.5s;
+}
+
+.userProfile_extras{
+	display: flex;
+	column-gap: 5px;
+}
+
+.userProfile_following{
+	display: flex;
+	column-gap: 3px;
+	margin-bottom: 20px;
+}
+
+.userProfile_secondaryData, .userProfile_following, .userProfile_secondaryData a, .userProfile_following a{
+	color: #24292E;
+	font-weight: 500
+}
+
+.userProfile_secondaryData a, .userProfile_following a{
+	text-decoration: none;
+}
+
+.userProfile_secondaryData a:hover, .userProfile_following a:hover{
+	text-decoration: underline;
+	color: #0366D6;
+}
+
+.userProfile_secondaryData .fa, .userProfile_following .fa, .grey{
+	color: #586069;
+}
+.userProfile_secondaryData div{
+	margin: 7px auto;
+}
+
+
+.userProfile_following_seperators{
+	position: relative;
+	bottom: 3px;
+	color: #24292E;
+	font-weight: bold; 
+}
+
+.userProfile_extras .fa{
+	width: 20px;
+	text-align: center;
+}
+.repositoriesSearchContainer_button:hover{
+	background: #F4F3F3;
+}
+
+.userProfile_following .userProfile_extras:hover{
+	cursor: pointer;
+}
+
+.in_focus{
+	color: #0366D6 !important;
 }
 
 .button_new{
 	background: #2EA44F;
 	color:#fff;
 }
+
+@media screen and (min-width: 765px){
+	.button_new{
+		width: 85px;
+		position: relative;	
+		left: 5px;	
+	}
+}
+
+.button_new:hover{
+	background: #279445;
+}
+
 
 .repositoriesSearchContainer .fa-book{
 	color: white;
@@ -414,7 +479,27 @@ span.repoCount{
 	border: 1px solid #0366D6;
 	outline: none;
 	box-shadow: 0 0 5px 0 #0366D6;
+}
 
+
+@media screen and (min-width: 765px){
+	.repositoriesTab{
+		margin-left: 30px;
+		position: relative;
+		left: 15px;
+	}
+	section.main {
+	    padding: 0 10px;
+	}
+	nav.primaryNav {
+	    padding: 15px 25px;
+	}
+	.profileButton{
+		margin: 15px 0; 
+	}
+	.display_sm{
+		display: none;
+	}
 }
 
 @media screen and (min-width: 1000px){
@@ -425,21 +510,16 @@ span.repoCount{
 	.primaryNav .searchGithub-input {
     	width: 300px;
 	}
-}
 
-@media screen and (min-width: 765px){
-	.repositoriesTab{
-		margin-left: 30px;
-		position: relative;
-		left: 15px;
-	}
-	section.main {
-	    padding: 0 20px;
-	}
 	nav.primaryNav {
 	    padding: 15px 40px;
 	}
+
+	section.main {
+	    padding: 0 20px;
+	}
 }
+
 
 @media screen and (max-width: 1000px){
 	.filtersContainer_main{
@@ -469,8 +549,9 @@ span.repoCount{
 
 	.button_new_main{
 		display: block;
-		margin: 5px auto;
-		width: 94%
+		margin: 15px auto 5px;
+		width: 94%;
+		border: 1px solid #E8EAEC;
 	}
 	.repositoriesSearchContainer{
 		grid-template-columns: 1fr auto;
@@ -479,21 +560,8 @@ span.repoCount{
 	.filtersContainer_main{
 		margin-left: 20px;
 	}
-
-}
-
-
-
-@media screen and (max-width: 520px){
-	.button_new_main{
-		position: relative;
-		left: 5px;
-	}
-}
-
-@media screen and (max-width: 500px){
-	.button_new_main{
-		width: 93%;
+	.display_lg{
+		display: none;
 	}
 }
 
@@ -730,6 +798,8 @@ footer i.fa-github:hover{
 	.repositoriesSearch{
 		width: 96%;
 		margin: 20px 0;
+		position: relative;	
+		left: 4px
 	}
 
 	.totalPublicRepositories{
@@ -748,12 +818,54 @@ footer i.fa-github:hover{
 		display: none;
 	}
 
+	span#bio.userTitle{
+		padding: 10px 0;
+	}
+}
+
+
+@media screen and (max-width: 690px){
+	.repositoriesSearch{
+		left: 2px;
+	}
+}
+
+@media screen and (max-width: 640px){
+	.repositoriesSearch{
+		left: 0;
+	}
 }
 
 @media screen and (max-width: 545px){
 	.repositoriesTab div .fa{
 		display: none
 	}
+}
+
+@media screen and (max-width: 520px){
+	.repositoriesSearchContainer{
+		margin-left: 15px;
+		width: 	93%
+	}
+
+}
+
+@media screen and (max-width: 450px){
+	.repositoriesSearchContainer{
+		margin-left: 20px;
+		width: 	90%
+	}
+	.button_new_main{
+		width: 91%;
+	}
+
+}
+
+@media screen and (max-width: 400px){
+	.repositoriesSearchContainer{
+		width: 	89%
+	}
+
 }
 
 @media screen and (max-width: 460px){
@@ -781,12 +893,12 @@ footer i.fa-github:hover{
 }
 
 @media screen and (min-width: 765px){
-	.profileSecondaryData .profileStatus{
+	.profileStatus{
 		justify-self:end;	
 		place-items:center;
 		position: relative;
 		bottom: 15.7vw;
-		right: 11px;
+		right: 48px;
 		border-radius: 50%;
 		white-space: nowrap;	
 		overflow-x: visible;		
@@ -831,24 +943,20 @@ footer i.fa-github:hover{
 	}
 }
 
-@media screen and (min-width: 820px){
-	.profileSecondaryData .profileStatus{
-		right: 0;
-	}	
-}
 
-@media screen and (min-width: 856px){
-	.profileSecondaryData .profileStatus{
+@media screen and (min-width: 845px){
+	.profileStatus{
 		bottom: 14.7vw;
-		right: 	0;
+		right: 	30px
 	}
 }
 @media screen and (min-width: 910px){
-	.profileSecondaryData .profileStatus{
-		bottom: 140px;
+	.profileStatus{
+		bottom: 130px;
+		right: 15px;
 	}
 	.main{
-		column-gap: 40px;
+		column-gap: 20px;
 	}
 	.repositoriesNav{
 		column-gap: 40px;

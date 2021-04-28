@@ -4,6 +4,7 @@
 	<title>Your Repositiories</title>
 	<link rel="stylesheet" href="main.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" type="image/ico" href="./favicon.ico">
 	<script src="https://kit.fontawesome.com/80dd2875f0.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -33,7 +34,6 @@
 
 	<div class="nav-third">
 		<a href="#" class="nav-bellGroup">
-			<span class="blue-circle"></span>
 			<i class="far fa-bell"></i>
 		</a>
 		<a href="#" class="hide nav-plusGroup">
@@ -111,18 +111,72 @@
 		<div class="profileFigure">
 			<img id="avatar3" alt="repositoryOwner">
 			<div class="profilePrimaryData">
-					<span id="name" class="name"></span>
-					<span id="userName" class="userName"></span>
+				<span id="name" class="name"></span>
+				<span id="userName" class="userName"></span>
 			</div>
 		</div>
-		<div class="profileSecondaryData">
+		<div class="profileStatus_container">
 			<div class="profileStatus" id="profileStatus">
 				<i id="smile" class="far fa-smile"></i>
 				<span id="setStatus" class="setStatus">Set status</span>
 			</div>
-			<span id="bio" class="userTitle"></span>
 		</div>
-		
+		<div id="profileSecondaryData" class="profileSecondaryData">
+			<span id="bio" class="userTitle"></span>
+			<button class="repositoriesSearchContainer_button profileButton">Edit profile</button>
+			<div class="userProfile_following display_lg">
+				<div class="userProfile_extras followerCount_container">
+					<i class="fa fa-users followerCount"></i>
+					<span id="followerCount" class="followerCount"></span>
+					<span class="grey followerCount">followers</span>
+				</div>
+				<span class="userProfile_following_seperators">.</span>
+				<div class="userProfile_extras followingsCount_container">
+					<span class="followingsCount" id="followingsCount"></span>
+					<span class="grey followingsCount">following</span>
+				</div>
+				<span class="userProfile_following_seperators">.</span>
+				<div class="userProfile_extras starredRepos_container">
+					<i class="fa fa-star-o starredRepos"></i>
+					<span class="strong starredRepos" id="starredRepos"></span>
+				</div>
+			</div>
+			<div class="userProfile_secondaryData">
+				<div class="userProfile_extras display_lg">
+					<i class="fa fa-map-marker"></i>
+					<span id="location"></span>
+				</div>
+				<div class="userProfile_extras">
+					<i class="fa fa-envelope-o"></i>
+					<a target="blank" id="emailUrl"><span id="userProfile_email"></span></a>
+				</div>
+				<div class="userProfile_extras">
+					<i class="fa fa-link"></i>
+					<a target="blank" id="websiteUrl"><span id="website"></span></a>
+				</div>
+				<div class="userProfile_extras display_lg">
+					<i class="fa fa-twitter"></i>
+					<a target="blank" id="twitterUrl"><span id="twitter"></span></a>
+				</div>
+			</div>
+			<div class="userProfile_following display_sm">
+				<div class="userProfile_extras followerCount_container">
+					<i class="fa fa-users followerCount"></i>
+					<span id="followerCount2" class="followerCount"></span>
+					<span class="grey followerCount">followers</span>
+				</div>
+				<span class="userProfile_following_seperators">.</span>
+				<div class="userProfile_extras followingsCount_container">
+					<span class="followingsCount" id="followingsCount2"></span>
+					<span class="grey followingsCount">following</span>
+				</div>
+				<span class="userProfile_following_seperators">.</span>
+				<div class="userProfile_extras starredRepos_container">
+					<i class="fa fa-star-o starredRepos"></i>
+					<span class="strong starredRepos" id="starredRepos2"></span>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="repositoriesPage-main">
 		<div class="repositoriesNav">
