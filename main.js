@@ -260,7 +260,6 @@ const createRepoObjects = (repo) => {
 
 const fetchData = () => {
 
-	//Add Personal Token from github
 	const token = "";
 	const fetchHeaders = {
 		"Content-Type" : "application/json",
@@ -364,7 +363,7 @@ const fetchData = () => {
 		document.getElementById("websiteUrl").setAttribute("href", `https://${websiteUrl}`);
 		document.getElementById("emailUrl").setAttribute("href", `mailto:${email}`);
 		document.getElementById("twitterUrl").setAttribute("href", `https://twitter.com/${twitterUsername}`);
-		document.getElementById("twitter").textContent = twitterUsername;
+		document.getElementById("twitter").textContent = `@${twitterUsername}`;
 
 		const parentContainer = document.getElementById('repositoriesContainer');
 
